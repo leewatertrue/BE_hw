@@ -17,7 +17,7 @@ def signup(request):
 
 def login(request):
     if request.method=='GET':
-        return render(request, 'accounts/login.html', {'form':AuthenticationForm})
+        return render(request, 'accounts/login.html', {'form':AuthenticationForm()})
     form=AuthenticationForm(request, request.POST)
     if form.is_valid():
         auth_login(request, form.user_cache)
